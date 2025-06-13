@@ -1,0 +1,16 @@
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\bin\Debug\net8.0-windows\File compression program.exe
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\bin\Debug\net8.0-windows\File compression program.deps.json
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\bin\Debug\net8.0-windows\File compression program.runtimeconfig.json
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\bin\Debug\net8.0-windows\File compression program.dll
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\bin\Debug\net8.0-windows\File compression program.pdb
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File_compression_program.MainForm.resources
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File compression program.csproj.GenerateResource.cache
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File compression program.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File compression program.AssemblyInfoInputs.cache
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File compression program.AssemblyInfo.cs
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File compression program.csproj.CoreCompileInputs.cache
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File compression program.dll
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\refint\File compression program.dll
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File compression program.pdb
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File compression program.genruntimeconfig.cache
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\ref\File compression program.dll

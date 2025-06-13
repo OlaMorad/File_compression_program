@@ -1,0 +1,218 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|c:\\users\\user\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\file compression program\\file compression program\\ui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|solutionrelative:file compression program\\ui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|c:\\users\\user\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\file compression program\\file compression program\\logic\\compressionstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|solutionrelative:file compression program\\logic\\compressionstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|c:\\users\\user\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\file compression program\\file compression program\\algorithms\\huffmanencoder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|solutionrelative:file compression program\\algorithms\\huffmanencoder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|c:\\users\\user\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\file compression program\\file compression program\\algorithms\\huffmannode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|solutionrelative:file compression program\\algorithms\\huffmannode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|c:\\users\\user\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\file compression program\\file compression program\\algorithms\\huffmandecoder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|solutionrelative:file compression program\\algorithms\\huffmandecoder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|c:\\users\\user\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\file compression program\\file compression program\\algorithms\\shannon_fano_decoder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|solutionrelative:file compression program\\algorithms\\shannon_fano_decoder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|c:\\users\\user\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\file compression program\\file compression program\\algorithms\\shannon_fano encoder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|solutionrelative:file compression program\\algorithms\\shannon_fano encoder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|c:\\users\\user\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\file compression program\\file compression program\\logic\\filemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|solutionrelative:file compression program\\logic\\filemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|c:\\users\\user\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\file compression program\\file compression program\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|solutionrelative:file compression program\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|c:\\users\\user\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\file compression program\\file compression program\\logic\\compressionresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|solutionrelative:file compression program\\logic\\compressionresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|c:\\users\\user\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\file compression program\\file compression program\\file compression program.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|solutionrelative:file compression program\\file compression program.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\file compression program\\ui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7F48E955-15F5-48EB-88F7-AD1E19FC354E}|File compression program\\File compression program.csproj|solutionrelative:file compression program\\ui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HuffmanDecoder.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Algorithms\\HuffmanDecoder.cs",
+              "RelativeDocumentMoniker": "File compression program\\Algorithms\\HuffmanDecoder.cs",
+              "ToolTip": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Algorithms\\HuffmanDecoder.cs",
+              "RelativeToolTip": "File compression program\\Algorithms\\HuffmanDecoder.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAqwCAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T17:25:36.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HuffmanEncoder.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Algorithms\\HuffmanEncoder.cs",
+              "RelativeDocumentMoniker": "File compression program\\Algorithms\\HuffmanEncoder.cs",
+              "ToolTip": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Algorithms\\HuffmanEncoder.cs",
+              "RelativeToolTip": "File compression program\\Algorithms\\HuffmanEncoder.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAAoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T17:24:13.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HuffmanNode.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Algorithms\\HuffmanNode.cs",
+              "RelativeDocumentMoniker": "File compression program\\Algorithms\\HuffmanNode.cs",
+              "ToolTip": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Algorithms\\HuffmanNode.cs",
+              "RelativeToolTip": "File compression program\\Algorithms\\HuffmanNode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T17:26:02.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Ui\\MainForm.cs",
+              "RelativeDocumentMoniker": "File compression program\\Ui\\MainForm.cs",
+              "ToolTip": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Ui\\MainForm.cs",
+              "RelativeToolTip": "File compression program\\Ui\\MainForm.cs",
+              "ViewState": "AgIAAAkBAAAAAAAAAAAqwBkBAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T17:33:29.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CompressionStats.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Logic\\CompressionStats.cs",
+              "RelativeDocumentMoniker": "File compression program\\Logic\\CompressionStats.cs",
+              "ToolTip": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Logic\\CompressionStats.cs",
+              "RelativeToolTip": "File compression program\\Logic\\CompressionStats.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAiwCQAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T17:38:17.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Shannon_Fano_Decoder.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Algorithms\\Shannon_Fano_Decoder.cs",
+              "RelativeDocumentMoniker": "File compression program\\Algorithms\\Shannon_Fano_Decoder.cs",
+              "ToolTip": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Algorithms\\Shannon_Fano_Decoder.cs",
+              "RelativeToolTip": "File compression program\\Algorithms\\Shannon_Fano_Decoder.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAqwCoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T19:14:53.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FileManager.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Logic\\FileManager.cs",
+              "RelativeDocumentMoniker": "File compression program\\Logic\\FileManager.cs",
+              "ToolTip": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Logic\\FileManager.cs",
+              "RelativeToolTip": "File compression program\\Logic\\FileManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T16:07:44.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Shannon_Fano Encoder.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Algorithms\\Shannon_Fano Encoder.cs",
+              "RelativeDocumentMoniker": "File compression program\\Algorithms\\Shannon_Fano Encoder.cs",
+              "ToolTip": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Algorithms\\Shannon_Fano Encoder.cs",
+              "RelativeToolTip": "File compression program\\Algorithms\\Shannon_Fano Encoder.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAqwFEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T17:54:26.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Program.cs",
+              "RelativeDocumentMoniker": "File compression program\\Program.cs",
+              "ToolTip": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Program.cs",
+              "RelativeToolTip": "File compression program\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T16:08:43.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CompressionResult.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Logic\\CompressionResult.cs",
+              "RelativeDocumentMoniker": "File compression program\\Logic\\CompressionResult.cs",
+              "ToolTip": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Logic\\CompressionResult.cs",
+              "RelativeToolTip": "File compression program\\Logic\\CompressionResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T16:08:05.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "File compression program.csproj",
+              "DocumentMoniker": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\File compression program.csproj",
+              "RelativeDocumentMoniker": "File compression program\\File compression program.csproj",
+              "ToolTip": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\File compression program.csproj",
+              "RelativeToolTip": "File compression program\\File compression program.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-13T16:05:32.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Ui\\MainForm.cs",
+              "RelativeDocumentMoniker": "File compression program\\Ui\\MainForm.cs",
+              "ToolTip": "C:\\Users\\USER\\\u0639\u0645\u0644\u064A \u0645\u0644\u062A\u064A \u0645\u064A\u062F\u064A\u0627\\File compression program\\File compression program\\Ui\\MainForm.cs [Design]",
+              "RelativeToolTip": "File compression program\\Ui\\MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T14:53:16.169Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
