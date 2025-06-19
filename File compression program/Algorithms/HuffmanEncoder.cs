@@ -1,90 +1,86 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace File_compression_program.Algorithms
 {
     public class HuffmanEncoder
     {
-        private Dictionary<byte, string> _encodingTable;
-
-        public (byte[] CompressedData, HuffmanNode Tree) Compress(byte[] input)
+        public void CompressToFile(byte[] input, string outputFilePath, string originalExtension, string password = "")
         {
-            var frequencyTable = BuildFrequencyTable(input);
-            var root = BuildHuffmanTree(frequencyTable);
-            _encodingTable = BuildEncodingTable(root);
+            var freqTable = BuildFrequencyTable(input);
+            var root = HuffmanTreeBuilder.BuildTree(freqTable);
+            var encodingTable = HuffmanTreeBuilder.BuildEncodingTable(root);
 
-            string encodedBits = string.Concat(input.Select(b => _encodingTable[b]));
-            byte[] encodedBytes = EncodeBitString(encodedBits);
+            BitArray bitArray = EncodeToBitArray(input, encodingTable);
+            byte[] compressedBytes = BitArrayToBytes(bitArray);
 
-            return (encodedBytes, root);
+            byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+            byte passwordLength = (byte)passwordBytes.Length;
+
+            using (var fs = new FileStream(outputFilePath, FileMode.Create, FileAccess.Write))
+            using (var writer = new BinaryWriter(fs, Encoding.UTF8))
+            {
+                // 1. كتابة طول كلمة السر وكلمة السر نفسها
+                writer.Write(passwordLength);
+                if (passwordLength > 0)
+                    writer.Write(passwordBytes);
+
+                // 2. كتابة طول اللاحقة
+                writer.Write((byte)originalExtension.Length);
+
+                // 3. كتابة اللاحقة نفسها (مثل "pdf")
+                writer.Write(Encoding.UTF8.GetBytes(originalExtension));
+
+                // 4. كتابة شجرة هوفمان
+                HuffmanTree.Serialize(root, writer);
+
+                // 5. كتابة طول البيانات الأصلية
+                writer.Write(input.Length);
+
+                // 6. كتابة البيانات المضغوطة
+                writer.Write(compressedBytes);
+
+                // 7. كتابة عدد البتات غير المستخدمة في آخر بايت (padding)
+                writer.Write((byte)(bitArray.Length % 8));
+            }
         }
 
         private Dictionary<byte, int> BuildFrequencyTable(byte[] data)
         {
             var freq = new Dictionary<byte, int>();
             foreach (var b in data)
-            {
-                if (!freq.ContainsKey(b)) freq[b] = 0;
-                freq[b]++;
-            }
+                freq[b] = freq.GetValueOrDefault(b) + 1;
             return freq;
         }
 
-        private HuffmanNode BuildHuffmanTree(Dictionary<byte, int> frequencies)
+        private BitArray EncodeToBitArray(byte[] input, Dictionary<byte, string> encodingTable)
         {
-            var pq = new PriorityQueue<HuffmanNode, int>();
-            foreach (var kvp in frequencies)
-            {
-                pq.Enqueue(new HuffmanNode { Symbol = kvp.Key, Frequency = kvp.Value }, kvp.Value);
-            }
+            int bitLength = input.Sum(b => encodingTable[b].Length);
+            var bits = new BitArray(bitLength);
+            int bitIndex = 0;
 
-            while (pq.Count > 1)
+            foreach (byte b in input)
             {
-                var left = pq.Dequeue();
-                var right = pq.Dequeue();
-                var parent = new HuffmanNode
+                string code = encodingTable[b];
+                foreach (char c in code)
                 {
-                    Frequency = left.Frequency + right.Frequency,
-                    Left = left,
-                    Right = right
-                };
-                pq.Enqueue(parent, parent.Frequency);
+                    bits[bitIndex++] = (c == '1');
+                }
             }
 
-            return pq.Dequeue();
+            return bits;
         }
 
-        private Dictionary<byte, string> BuildEncodingTable(HuffmanNode node)
+        private byte[] BitArrayToBytes(BitArray bits)
         {
-            var table = new Dictionary<byte, string>();
-            BuildTableRecursive(node, "", table);
-            return table;
-        }
-
-        private void BuildTableRecursive(HuffmanNode node, string path, Dictionary<byte, string> table)
-        {
-            if (node == null) return;
-
-            if (node.IsLeaf && node.Symbol.HasValue)
-                table[node.Symbol.Value] = path;
-
-            BuildTableRecursive(node.Left, path + "0", table);
-            BuildTableRecursive(node.Right, path + "1", table);
-        }
-
-        private byte[] EncodeBitString(string bitString)
-        {
-            int byteCount = (bitString.Length + 7) / 8;
-            byte[] result = new byte[byteCount];
-
-            for (int i = 0; i < bitString.Length; i++)
-            {
-                if (bitString[i] == '1')
-                    result[i / 8] |= (byte)(1 << (7 - (i % 8)));
-            }
-
-            return result;
+            int numBytes = (bits.Length + 7) / 8;
+            byte[] bytes = new byte[numBytes];
+            bits.CopyTo(bytes, 0);
+            return bytes;
         }
     }
 }

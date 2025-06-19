@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -7,75 +9,79 @@ namespace File_compression_program.Algorithms
 {
     public class Shannon_Fano_Encoder
     {
-        private Dictionary<byte, string> encodingTable;
-
-        public byte[] Compress(byte[] input, out Dictionary<byte, string> encodingTableOut)
+        public void CompressToFile(byte[] input, string outputFilePath, string originalExtension, string password = "")
         {
             var freqTable = BuildFrequencyTable(input);
-            encodingTable = new Dictionary<byte, string>();
+            var encodingTable = ShannonFanoTreeBuilder.BuildEncodingTable(freqTable);
 
-            var symbols = freqTable.OrderByDescending(x => x.Value).ToList();
-            BuildEncoding(symbols, "");
+            BitArray bitArray = EncodeToBitArray(input, encodingTable);
+            byte[] compressedBytes = BitArrayToBytes(bitArray);
 
-            encodingTableOut = encodingTable;
+            if (originalExtension.StartsWith("."))
+                originalExtension = originalExtension.Substring(1); // نحذف النقطة
 
-            var encodedBitString = string.Concat(input.Select(b => encodingTable[b]));
-            return EncodeBitString(encodedBitString);
+            byte[] extBytes = Encoding.UTF8.GetBytes(originalExtension);
+            byte extLength = (byte)extBytes.Length;
+
+            byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+            byte passwordLength = (byte)passwordBytes.Length;
+
+            using (var fs = new FileStream(outputFilePath, FileMode.Create, FileAccess.Write))
+            using (var writer = new BinaryWriter(fs))
+            {
+                // 1. كتابة طول كلمة السر وكلمة السر نفسها
+                writer.Write(passwordLength);
+                if (passwordLength > 0)
+                    writer.Write(passwordBytes);
+
+                // 2. اكتب طول اللاحقة ثم اللاحقة نفسها
+                writer.Write(extLength);
+                writer.Write(extBytes);
+
+                // 3. نسلسل جدول الترميز
+                ShannonFanoTable.Serialize(encodingTable, writer);
+
+                // 4. طول البيانات الأصلية
+                writer.Write(input.Length);
+
+                // 5. البيانات المضغوطة
+                writer.Write(compressedBytes);
+
+                // 6. عدد البتات الفارغة
+                writer.Write((byte)(bitArray.Length % 8));
+            }
         }
 
         private Dictionary<byte, int> BuildFrequencyTable(byte[] data)
         {
             var freq = new Dictionary<byte, int>();
-            foreach (byte b in data)
-            {
-                if (!freq.ContainsKey(b)) freq[b] = 0;
-                freq[b]++;
-            }
+            foreach (var b in data)
+                freq[b] = freq.GetValueOrDefault(b) + 1;
             return freq;
         }
 
-        private void BuildEncoding(List<KeyValuePair<byte, int>> symbols, string prefix)
+        private BitArray EncodeToBitArray(byte[] input, Dictionary<byte, string> encodingTable)
         {
-            if (symbols.Count == 1)
+            int bitLength = input.Sum(b => encodingTable[b].Length);
+            var bits = new BitArray(bitLength);
+            int bitIndex = 0;
+
+            foreach (byte b in input)
             {
-                encodingTable[symbols[0].Key] = prefix.Length == 0 ? "0" : prefix;
-                return;
+                string code = encodingTable[b];
+                foreach (char c in code)
+                    bits[bitIndex++] = (c == '1');
             }
 
-            int total = symbols.Sum(s => s.Value);
-            int half = total / 2;
-            int sum = 0;
-            int splitIndex = 0;
-
-            for (int i = 0; i < symbols.Count; i++)
-            {
-                sum += symbols[i].Value;
-                if (sum >= half)
-                {
-                    splitIndex = i + 1;
-                    break;
-                }
-            }
-
-            var left = symbols.Take(splitIndex).ToList();
-            var right = symbols.Skip(splitIndex).ToList();
-
-            BuildEncoding(left, prefix + "0");
-            BuildEncoding(right, prefix + "1");
+            return bits;
         }
 
-        private byte[] EncodeBitString(string bits)
+        private byte[] BitArrayToBytes(BitArray bits)
         {
             int byteCount = (bits.Length + 7) / 8;
-            byte[] result = new byte[byteCount];
-
-            for (int i = 0; i < bits.Length; i++)
-            {
-                if (bits[i] == '1')
-                    result[i / 8] |= (byte)(1 << (7 - (i % 8)));
-            }
-
-            return result;
+            byte[] bytes = new byte[byteCount];
+            bits.CopyTo(bytes, 0);
+            return bytes;
         }
     }
 }

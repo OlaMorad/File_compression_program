@@ -14,3 +14,5 @@ C:\Users\USER\عملي ملتي ميديا\File compression program\File compres
 C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File compression program.pdb
 C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File compression program.genruntimeconfig.cache
 C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\ref\File compression program.dll
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File compression program.sourcelink.json
+C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File_compression_program.UI.DecompressionUserControl.resources
