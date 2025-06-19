@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("File compression program")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+986dcf2eb3d46ae417e6ee528bb16d8a05ae2b3b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40fd6435ef4d20d246e6111b197cdfeb122c2531")]
 [assembly: System.Reflection.AssemblyProductAttribute("File compression program")]
 [assembly: System.Reflection.AssemblyTitleAttribute("File compression program")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

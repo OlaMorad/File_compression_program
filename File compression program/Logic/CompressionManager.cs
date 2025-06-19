@@ -1,6 +1,5 @@
 ﻿using System;
 using File_compression_program.Algorithms;
-
 namespace File_compression_program.Logic
 {
     public enum CompressionAlgorithm

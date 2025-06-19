@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using File_compression_program.UI; //  √ﬂœ √‰ «·‹ UserControls „ÊÃÊœÌ‰ ›Ì Â–« namespace
+using File_compression_program.UI; 
 
 namespace File_compression_program
 {
@@ -10,6 +10,7 @@ namespace File_compression_program
         private Panel panelMain;
         private Button compressButton;
         private Button decompressButton;
+        private Button FolderButton; 
 
         public MainForm()
         {
@@ -49,6 +50,18 @@ namespace File_compression_program
             };
             decompressButton.Click += DecompressButton_Click;
 
+            FolderButton = new Button()
+            {
+                Text = "Folder Compression",
+                Width = 170,
+                Height = 40,
+                Top = 10,
+                Left = 450,
+                Font = new Font("Segoe UI", 10)
+            };
+            FolderButton.Click += FolderButton_Click;
+
+
             // Panel ·Ì⁄—÷ «·„Õ ÊÏ
             panelMain = new Panel()
             {
@@ -62,6 +75,7 @@ namespace File_compression_program
 
             this.Controls.Add(compressButton);
             this.Controls.Add(decompressButton);
+            this.Controls.Add(FolderButton);
             this.Controls.Add(panelMain);
 
             // ⁄—÷ —”«·…  —ÕÌ» √Ê·« œ«Œ· «·‹ Panel («Œ Ì«—Ì)
@@ -99,5 +113,13 @@ namespace File_compression_program
             decompressionControl.Dock = DockStyle.Fill;
             panelMain.Controls.Add(decompressionControl);
         }
+        private void FolderButton_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            var folderControl = new FolderCompressionControl(); // ·«“„  ‰‘∆ Â–« «·ÌÊ“— ﬂÊ‰ —Ê·
+            folderControl.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(folderControl);
+        }
+
     }
 }

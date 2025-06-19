@@ -7,6 +7,9 @@
     <Compile Update="Ui\DecompressionUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Ui\FolderCompressionControl .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Ui\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

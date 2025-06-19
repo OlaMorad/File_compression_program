@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace File_compression_program.Logic
 {
@@ -12,6 +11,12 @@ namespace File_compression_program.Logic
         {
             OriginalSizeBytes = new FileInfo(originalFilePath).Length;
             CompressedSizeBytes = new FileInfo(compressedFilePath).Length;
+        }
+
+        public CompressionStats(long originalBytes, long compressedBytes)
+        {
+            OriginalSizeBytes = originalBytes;
+            CompressedSizeBytes = compressedBytes;
         }
 
         public string GetOriginalSizeFormatted() => FormatSize(OriginalSizeBytes);
