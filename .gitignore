@@ -1,0 +1,46 @@
+# ===================== #
+# Visual Studio files  #
+# ===================== #
+.vs/
+*.user
+*.suo
+*.cache
+*.db
+*.log
+*.tlog
+
+# ===================== #
+# Build results         #
+# ===================== #
+bin/
+obj/
+TestResults/
+*.exe
+*.dll
+*.pdb
+*.apphost.exe
+
+# ===================== #
+# NuGet                 #
+# ===================== #
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.assets.json
+project.nuget.cache
+
+# ===================== #
+# Visual Studio Code    #
+# ===================== #
+.vscode/
+.history/
+
+# ===================== #
+# Other                 #
+# ===================== #
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+Thumbs.db
