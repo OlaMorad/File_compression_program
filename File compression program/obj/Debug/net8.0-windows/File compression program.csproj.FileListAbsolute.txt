@@ -16,3 +16,23 @@ C:\Users\USER\عملي ملتي ميديا\File compression program\File compres
 C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\ref\File compression program.dll
 C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File compression program.sourcelink.json
 C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File_compression_program.UI.DecompressionUserControl.resources
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\bin\Debug\net8.0-windows\File compression program.exe
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\bin\Debug\net8.0-windows\File compression program.deps.json
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\bin\Debug\net8.0-windows\File compression program.runtimeconfig.json
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\bin\Debug\net8.0-windows\File compression program.dll
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\bin\Debug\net8.0-windows\File compression program.pdb
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\File_compression_program.UI.DecompressionUserControl.resources
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\File_compression_program.MainForm.resources
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\File compression program.csproj.GenerateResource.cache
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\File compression program.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\File compression program.AssemblyInfoInputs.cache
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\File compression program.AssemblyInfo.cs
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\File compression program.csproj.CoreCompileInputs.cache
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\File compression program.sourcelink.json
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\File compression program.dll
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\refint\File compression program.dll
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\File compression program.pdb
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\File compression program.genruntimeconfig.cache
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\ref\File compression program.dll
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\File_compression_program.UI.CompressionUserControl.resources
+C:\Users\new\Source\Repos\File_compression_programs\File compression program\obj\Debug\net8.0-windows\File_compression_program.Ui.ComparisonUserControl.resources
