@@ -16,6 +16,3 @@ C:\Users\USER\عملي ملتي ميديا\File compression program\File compres
 C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\ref\File compression program.dll
 C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File compression program.sourcelink.json
 C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File_compression_program.UI.DecompressionUserControl.resources
-C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\bin\Debug\net8.0-windows\DotNetZip.dll
-C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File compression program.csproj.AssemblyReference.cache
-C:\Users\USER\عملي ملتي ميديا\File compression program\File compression program\obj\Debug\net8.0-windows\File com.C724DEC4.Up2Date

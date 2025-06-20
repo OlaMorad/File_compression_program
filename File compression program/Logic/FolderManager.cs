@@ -13,7 +13,8 @@ namespace File_compression_program.Logic
                 File.Delete(outputZipFilePath);
             }
 
-            ZipFile.CreateFromDirectory(folderPath, outputZipFilePath, CompressionLevel.Optimal, includeBaseDirectory: false);
+            ZipFile.CreateFromDirectory(folderPath, outputZipFilePath, CompressionLevel.Fastest, includeBaseDirectory: false);
+            //ZipFile.CreateFromDirectory(folderPath, outputZipFilePath, CompressionLevel.Optimal, includeBaseDirectory: false);
         }
 
         public static void DecompressToFolder(string zipFilePath, string outputFolderPath)

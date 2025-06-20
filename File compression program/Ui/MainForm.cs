@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using File_compression_program.Ui;
 using File_compression_program.UI; 
 
 namespace File_compression_program
@@ -10,31 +11,36 @@ namespace File_compression_program
         private Panel panelMain;
         private Button compressButton;
         private Button decompressButton;
-        private Button FolderButton; 
+        private Button FolderButton;
+        private Button compareButton; // «·“— «·ÃœÌœ
 
         public MainForm()
         {
             InitializeComponent();
             InitializeCustomUI();
         }
-
         private void InitializeCustomUI()
         {
             this.Text = "File Compression Program";
-            this.Width = 700;
-            this.Height = 500;
+            this.Width = 800;
+            this.Height = 600;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
 
-            // √“—«— «·÷€ÿ Ê›ﬂ «·÷€ÿ ›Ì «·√⁄·Ï
+            int buttonWidth = 150;
+            int buttonHeight = 40;
+            int spacing = 20;
+            int startLeft = 30;
+            int topPosition = 10;
+
             compressButton = new Button()
             {
                 Text = "Compress File",
-                Width = 150,
-                Height = 40,
-                Top = 10,
-                Left = 50,
+                Width = buttonWidth,
+                Height = buttonHeight,
+                Top = topPosition,
+                Left = startLeft,
                 Font = new Font("Segoe UI", 10)
             };
             compressButton.Click += CompressButton_Click;
@@ -42,43 +48,52 @@ namespace File_compression_program
             decompressButton = new Button()
             {
                 Text = "Decompress File",
-                Width = 150,
-                Height = 40,
-                Top = 10,
-                Left = 250,
+                Width = buttonWidth,
+                Height = buttonHeight,
+                Top = topPosition,
+                Left = compressButton.Right + spacing,
                 Font = new Font("Segoe UI", 10)
             };
             decompressButton.Click += DecompressButton_Click;
 
+            compareButton = new Button()
+            {
+                Text = "Compare Algorithms",
+                Width = buttonWidth,
+                Height = buttonHeight,
+                Top = topPosition,
+                Left = decompressButton.Right + spacing,
+                Font = new Font("Segoe UI", 10)
+            };
+            compareButton.Click += CompareButton_Click;
+
             FolderButton = new Button()
             {
                 Text = "Folder Compression",
-                Width = 170,
-                Height = 40,
-                Top = 10,
-                Left = 450,
+                Width = buttonWidth,
+                Height = buttonHeight,
+                Top = topPosition,
+                Left = compareButton.Right + spacing,
                 Font = new Font("Segoe UI", 10)
             };
             FolderButton.Click += FolderButton_Click;
 
-
-            // Panel ·Ì⁄—÷ «·„Õ ÊÏ
             panelMain = new Panel()
             {
-                Top = 60,
+                Top = compressButton.Bottom + 10,
                 Left = 10,
                 Width = this.ClientSize.Width - 20,
-                Height = this.ClientSize.Height - 70,
+                Height = this.ClientSize.Height - (compressButton.Bottom + 20),
                 BorderStyle = BorderStyle.FixedSingle
             };
             panelMain.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 
             this.Controls.Add(compressButton);
             this.Controls.Add(decompressButton);
+            this.Controls.Add(compareButton);
             this.Controls.Add(FolderButton);
             this.Controls.Add(panelMain);
 
-            // ⁄—÷ —”«·…  —ÕÌ» √Ê·« œ«Œ· «·‹ Panel («Œ Ì«—Ì)
             ShowWelcomeMessage();
         }
 
@@ -113,7 +128,15 @@ namespace File_compression_program
             decompressionControl.Dock = DockStyle.Fill;
             panelMain.Controls.Add(decompressionControl);
         }
-        private void FolderButton_Click(object sender, EventArgs e)
+        // «·œ«·… «·ÃœÌœ… ·“— «·„ﬁ«—‰…
+        private void CompareButton_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            var comparisonControl = new ComparisonUserControl();
+            comparisonControl.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(comparisonControl);
+        }
+private void FolderButton_Click(object sender, EventArgs e)
         {
             panelMain.Controls.Clear();
             var folderControl = new FolderCompressionControl(); // ·«“„  ‰‘∆ Â–« «·ÌÊ“— ﬂÊ‰ —Ê·

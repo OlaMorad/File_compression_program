@@ -48,12 +48,6 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
-          "dependencies": {
-            "DotNetZip": {
-              "target": "Package",
-              "version": "[1.16.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
