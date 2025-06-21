@@ -22,7 +22,6 @@ namespace File_compression_program.Ui
 
         private void InitializeComponents()
         {
-            this.BackColor = Color.White;
             this.Padding = new Padding(20);
 
             // زر اختيار الملف

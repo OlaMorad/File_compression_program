@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using File_compression_program.Logic;
-using System.Linq;
+using System.Text;
 
 namespace File_compression_program.UI
 {
@@ -17,12 +15,13 @@ namespace File_compression_program.UI
         private TextBox txtPassword;
         private Label lblPassword;
         private Button btnStart;
+        private Button btnPauseResume;
         private Button btnCancel;
         private ProgressBar progressBar;
         private Label resultLabel;
 
         private string[] selectedFilePaths;
-        private CancellationTokenSource cancellationTokenSource;
+        private CompressionTaskManager taskManager;
 
         public CompressionUserControl()
         {
@@ -91,13 +90,22 @@ namespace File_compression_program.UI
             };
             btnStart.Click += BtnStart_Click;
 
-            btnCancel = new Button()
+            btnPauseResume = new Button()
             {
-                Text = "Cancel",
+                Text = "⏸ Pause",
                 Left = btnStart.Right + 20,
                 Top = btnStart.Top,
                 Width = 100,
-                Height = 35,
+                Enabled = false
+            };
+            btnPauseResume.Click += BtnPauseResume_Click;
+
+            btnCancel = new Button()
+            {
+                Text = "Cancel",
+                Left = btnPauseResume.Right + 20,
+                Top = btnStart.Top,
+                Width = 100,
                 Enabled = false
             };
             btnCancel.Click += BtnCancel_Click;
@@ -128,6 +136,7 @@ namespace File_compression_program.UI
             this.Controls.Add(lblPassword);
             this.Controls.Add(txtPassword);
             this.Controls.Add(btnStart);
+            this.Controls.Add(btnPauseResume);
             this.Controls.Add(btnCancel);
             this.Controls.Add(progressBar);
             this.Controls.Add(resultLabel);
@@ -135,22 +144,26 @@ namespace File_compression_program.UI
 
         private void BtnSelectFiles_Click(object sender, EventArgs e)
         {
-            using OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Multiselect = true;
-            if (dlg.ShowDialog() == DialogResult.OK)
+            using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                selectedFilePaths = dlg.FileNames;
-                txtFilePath.Lines = selectedFilePaths;
-                btnStart.Enabled = selectedFilePaths.Length > 0;
-                resultLabel.Text = "";
+                dlg.Multiselect = true;
+                dlg.Filter = "All Files (*.*)|*.*";
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    selectedFilePaths = dlg.FileNames;
+                    txtFilePath.Lines = selectedFilePaths;
+                    btnStart.Enabled = selectedFilePaths.Length > 0;
+                    resultLabel.Text = "";
+                }
             }
         }
 
-        private async void BtnStart_Click(object sender, EventArgs e)
+        private void BtnStart_Click(object sender, EventArgs e)
         {
             if (selectedFilePaths == null || selectedFilePaths.Length == 0)
             {
-                MessageBox.Show("Please select at least one file to compress.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select at least one file to compress.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -158,73 +171,97 @@ namespace File_compression_program.UI
             {
                 if (!File.Exists(file))
                 {
-                    MessageBox.Show($"File not found: {file}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"File not found: {file}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
 
             btnStart.Enabled = false;
+            btnPauseResume.Enabled = true;
             btnCancel.Enabled = true;
             progressBar.Visible = true;
-            progressBar.Style = ProgressBarStyle.Marquee;
-            resultLabel.Text = "";
+            progressBar.Value = 0;
+            resultLabel.Text = "Starting compression...";
 
-            cancellationTokenSource = new CancellationTokenSource();
-
-            CompressionAlgorithm algorithm = algorithmComboBox.SelectedItem.ToString() == "Huffman"
+            var algorithm = algorithmComboBox.SelectedItem.ToString() == "Huffman"
                 ? CompressionAlgorithm.Huffman
                 : CompressionAlgorithm.ShannonFano;
 
             string password = txtPassword.Text;
 
-            try
+            taskManager = new CompressionTaskManager();
+            taskManager.ProgressChanged += percent =>
             {
-                var results = new System.Text.StringBuilder();
+                if (InvokeRequired)
+                    Invoke(new Action(() => progressBar.Value = percent));
+                else
+                    progressBar.Value = percent;
+            };
 
-                await Task.Run(() =>
-                {
-                    Parallel.ForEach(selectedFilePaths, new ParallelOptions { CancellationToken = cancellationTokenSource.Token }, file =>
+            taskManager.Completed += message =>
+            {
+                if (InvokeRequired)
+                    Invoke(new Action(() =>
                     {
-                        string outputPath = file + (algorithm == CompressionAlgorithm.Huffman ? ".huff" : ".sf");
-                        var manager = new CompressionManager();
+                        resultLabel.Text = message;
+                        ResetButtons();
+                    }));
+                else
+                {
+                    resultLabel.Text = message;
+                    ResetButtons();
+                }
+            };
 
-                        var start = DateTime.Now;
-                        manager.Compress(file, outputPath, algorithm, password);
-                        var duration = DateTime.Now - start;
+            taskManager.Failed += message =>
+            {
+                if (InvokeRequired)
+                    Invoke(new Action(() =>
+                    {
+                        resultLabel.Text = message;
+                        ResetButtons();
+                    }));
+                else
+                {
+                    resultLabel.Text = message;
+                    ResetButtons();
+                }
+            };
 
-                        var stats = new CompressionStats(file, outputPath);
-                        lock (results)
-                        {
-                            results.AppendLine($"📄 {Path.GetFileName(file)}");
-                            results.AppendLine(stats.GetCompressionSummaryWithTime(duration));
-                            results.AppendLine(new string('-', 60));
-                        }
-                    });
-                }, cancellationTokenSource.Token);
+            taskManager.StartCompressMultipleFiles(selectedFilePaths, algorithm, password);
+        }
 
-                resultLabel.Invoke(() => resultLabel.Text = $"✅ Compression completed for {selectedFilePaths.Length} files:\n\n" + results.ToString());
-            }
-            catch (OperationCanceledException)
+        private void BtnPauseResume_Click(object sender, EventArgs e)
+        {
+            if (taskManager == null) return;
+
+            if (taskManager.IsPaused)
             {
-                MessageBox.Show("Compression canceled.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                resultLabel.Text = "Compression canceled.";
+                taskManager.Resume();
+                btnPauseResume.Text = "⏸ Pause";
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error during compression:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                resultLabel.Text = "Error occurred during compression.";
-            }
-            finally
-            {
-                progressBar.Visible = false;
-                btnStart.Enabled = true;
-                btnCancel.Enabled = false;
+                taskManager.Pause();
+                btnPauseResume.Text = "▶ Resume";
             }
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            cancellationTokenSource?.Cancel();
+            taskManager?.Cancel();
+            btnPauseResume.Enabled = false;
+            btnCancel.Enabled = false;
+        }
+
+        private void ResetButtons()
+        {
+            btnStart.Enabled = true;
+            btnPauseResume.Enabled = false;
+            btnCancel.Enabled = false;
+            btnPauseResume.Text = "⏸ Pause";
+            progressBar.Visible = false;
         }
     }
 }

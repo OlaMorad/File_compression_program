@@ -1,4 +1,4 @@
-namespace File_compression_program
+﻿namespace File_compression_program
 {
     internal static class Program
     {
